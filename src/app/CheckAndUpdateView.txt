@@ -1,0 +1,18 @@
+function checkAndUpdateView(view) {
+  ...
+
+  // update input bindings on child views (components & directives)
+  // call NgOnInit, NgDoCheck, NgOnChanges hooks if needed
+  Services.updateDirectives(view, 0 /* CheckAndUpdate */);
+
+  // DOM updates, perform rednering for the curent view ( component )
+  Services.updateRenderer(view, 0 /* CheckAndUpdate */);
+
+  // run change detection on child views
+  execComponentViewsAction(view, ViewAction.CheckAndUpdate);
+
+  // call AfterViewChecked and AfterViewInit hooks
+  callLifecycleHooksChildrenFirst(view, 8388608 /* AfterViewChecked */ | (callInit ? 4194304 /* AfterViewInit */ : 0));
+
+ ...
+}
