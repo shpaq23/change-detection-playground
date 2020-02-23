@@ -1,2 +1,17 @@
-<h1>{{title}}</h1>
-<app-timer></app-timer>
+<p><span>{{title}}</span> number of change detection triggered: {{changeDetectionTriggered}}</p>
+<button (click)="onClick()"> Trigger Change Detection</button>
+<app-child1></app-child1>
+<app-child2></app-child2>
+<!--<app-timer></app-timer>-->
+<!--<app-child name="child1">-->
+<!--  <app-child name="child1 of child1"></app-child>-->
+<!--  <app-child name="child2 of child1"></app-child>-->
+<!--</app-child>-->
+
+<!--<app-child name="child2" [detachChangeDetection]="true">-->
+<!--  <app-child name="child1 of child2"></app-child>-->
+<!--  <app-child name="child2 of child2">-->
+<!--    <app-child name="child1 of child2 of child2"></app-child>-->
+<!--  </app-child>-->
+<!--  <app-child name="child3 of child2"></app-child>-->
+<!--</app-child>-->
