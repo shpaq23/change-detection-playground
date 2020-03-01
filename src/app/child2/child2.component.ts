@@ -4,9 +4,11 @@ import {AbstractChild} from '../AbstractChild';
 @Component({
   selector: 'app-child2',
   templateUrl: './child2.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Child2Component extends AbstractChild implements OnInit {
+
+  value = 'ParentValue';
 
   constructor(cd: ChangeDetectorRef, private ngZone: NgZone) {
     super(cd, 'C2');
@@ -25,6 +27,10 @@ export class Child2Component extends AbstractChild implements OnInit {
   onClick(): void {
     super.onClick();
     // this.changeDetection.markForCheck();
+  }
+
+  changeValue(event: string): void {
+    this.value = event;
   }
 
 }

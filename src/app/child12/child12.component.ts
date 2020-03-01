@@ -1,11 +1,15 @@
-import {ChangeDetectorRef, Component, DoCheck, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnInit} from '@angular/core';
 import {AbstractChild} from '../AbstractChild';
 
 @Component({
   selector: 'app-child12',
-  templateUrl: '../AbstractChildTemplate.html'
+  templateUrl: '../AbstractChildTemplate.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Child12Component extends AbstractChild implements OnInit {
+
+  @Input()
+  value: string;
 
   constructor(cd: ChangeDetectorRef) {
     super(cd, 'C1C2');

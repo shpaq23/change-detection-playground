@@ -1,4 +1,6 @@
 <p><span>{{name}}</span>
   number of change detection triggered: {{changeDetectionTriggered}}</p>
 <button (click)="onClick()">Trigger Change Detection</button>
-<app-child122></app-child122>
+<p>{{value}}</p>
+<app-child122 [value]="value" (outputValue)="outputValue.emit($event)"></app-child122>
+
